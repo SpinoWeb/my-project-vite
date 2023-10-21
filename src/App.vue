@@ -1,6 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Dropdown, ListGroup, ListGroupItem } from "flowbite-vue";
+
+import { ref } from "vue";
+import { Select } from "flowbite-vue";
+
+let selected = ref("");
+const countries = [
+  { value: "us", name: "United States" },
+  { value: "ca", name: "Canada" },
+  { value: "fr", name: "France" },
+];
+</script>
 
 <template>
+  <div class="container mx-auto rounded-xl shadow border p-2 m-4">
+    <dropdown text="Click me" placement="bottom">
+      <list-group>
+        <list-group-item>Item #1</list-group-item>
+        <list-group-item>Item #2</list-group-item>
+        <list-group-item>Item #3</list-group-item>
+      </list-group>
+    </dropdown>
+
+    <Select v-model="selected" :options="countries" />
+  </div>
+
   <div class="container mx-auto rounded-xl shadow border p-2 m-4">
     <div class="navbar bg-base-300 rounded-box">
       <div class="flex-1 px-2 lg:flex-none">
@@ -93,6 +117,7 @@
   <div class="container mx-auto rounded-xl shadow border p-2 m-4">
     <div class="card-body mx-auto rounded-xl shadow border">
       <h3 class="card-title">Card title!</h3>
+      <Select v-model="selected" :options="countries" class="w-full max-w-xs" />
       <select class="select w-full max-w-xs">
         <option disabled selected>Pick your favorite Simpson</option>
         <option>Homer</option>
