@@ -16,9 +16,13 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    //"noUnusedLocals": true,
+    //"noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // https://stackoverflow.com/questions/44565671/ignore-ts6133-import-is-declared-but-never-used
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

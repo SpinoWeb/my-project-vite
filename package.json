@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-flow/background": "^1.2.0",
+    "@vue-flow/core": "^1.26.0",
+    "@vue-flow/minimap": "^1.2.0",
+    "@vue-flow/node-toolbar": "^1.1.0",
     "flowbite": "^1.8.1",
     "flowbite-vue": "^0.0.17",
     "vue": "^3.3.4"
