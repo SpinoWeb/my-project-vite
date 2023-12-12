@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+//import { ref } from "vue";
 
 import { Panel, VueFlow, useVueFlow } from "@vue-flow/core";
 import { Background, BackgroundVariant } from "@vue-flow/background";
@@ -32,7 +32,7 @@ const addRandomNode = () => {
     <Background :variant="BackgroundVariant.Points" />
 
     <Panel position="top-right">
-      <button type="button" @click="addRandomNode">add node</button>
+      <button class="btn" type="button" @click="addRandomNode">add node</button>
     </Panel>
   </VueFlow>
 </template>
