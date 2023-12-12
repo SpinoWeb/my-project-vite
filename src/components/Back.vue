@@ -1,12 +1,16 @@
 <script setup lang="ts">
-//import { ref } from "vue";
+import { ref } from "vue";
 
 import { Panel, VueFlow, useVueFlow } from "@vue-flow/core";
 import { Background, BackgroundVariant } from "@vue-flow/background";
 import { MiniMap } from "@vue-flow/minimap";
-
 const { nodes, addNodes, addEdges, onConnect, dimensions } = useVueFlow();
 
+// ref
+const snapToGrid = ref<boolean>(true);
+const snapGrid = ref<any>([20, 20]);
+
+//
 onConnect((params) => addEdges(params));
 
 const addRandomNode = () => {
@@ -26,13 +30,13 @@ const addRandomNode = () => {
 </script>
 
 <template>
-  <VueFlow :snap-to-grid="true">
+  <VueFlow :snap-to-grid="snapToGrid" :snap-grid="snapGrid">
     <MiniMap />
 
-    <Background :variant="BackgroundVariant.Points" />
+    <Background :variant="BackgroundVariant.Dots" />
 
     <Panel position="top-right">
-      <button class="btn" type="button" @click="addRandomNode">add node</button>
+      <button class="btn" type="button" @click="addRandomNode">node +</button>
     </Panel>
   </VueFlow>
 </template>
